@@ -17,15 +17,18 @@ export function generateContentMetadata({
   const ogUrl = new URL(`${siteConfig.site_domain}/api/og`);
   ogUrl.searchParams.append("title", title);
   ogUrl.searchParams.append("description", description);
+  const canonicalUrl = `${siteConfig.site_domain}/${basePath}/${slug}`;
 
   return {
     title,
     description,
+    keywords: ["SF6 gas", "SF6 equipment", "SF6 technology", "SF6 best practices", ...title.split(/\s+/).filter(word => word.length > 3)],
+    canonical: canonicalUrl,
     openGraph: {
       title,
       description,
       type: "article",
-      url: `${siteConfig.site_domain}/${basePath}/${slug}`,
+      url: canonicalUrl,
       images: [
         {
           url: ogUrl.toString(),

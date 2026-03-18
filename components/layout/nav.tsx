@@ -29,7 +29,7 @@ export function Nav({ className, children, id }: NavProps) {
         >
           <Image
             src={Logo}
-            alt="Logo"
+            alt={`${siteConfig.site_name} Logo`}
             loading="eager"
             className="dark:invert"
             width={42}
@@ -48,8 +48,8 @@ export function Nav({ className, children, id }: NavProps) {
               </Button>
             ))}
           </div>
-          <Button asChild className="hidden sm:flex">
-            <Link href="https://github.com/9d8dev/next-wp">Get Started</Link>
+          <Button asChild className="hidden sm:flex bg-blue-800 hover:bg-blue-700 text-white">
+            <Link href="#contact">Get in touch</Link>
           </Button>
           <MobileNav />
         </div>

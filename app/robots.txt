@@ -1,2 +1,15 @@
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://www.sf6relations.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 10
+
+# Disallow specific paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /__nextjs_placeholder__/
+Disallow: /next.svg
+Disallow: /vercel.svg

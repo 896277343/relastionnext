@@ -21,12 +21,19 @@ import { Section, Container, Prose } from "@/components/craft";
 import { PostCard } from "@/components/posts/post-card";
 import { FilterPosts } from "@/components/posts/filter";
 import { SearchInput } from "@/components/posts/search-input";
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog Posts",
-  description: "Browse all our blog posts",
+  title: "SF6 Gas News & Insights",
+  description: "Latest news, insights, and technical articles about SF6 gas solutions, equipment, and industry developments",
+  keywords: ["SF6 gas news", "SF6 equipment insights", "SF6 industry developments", "SF6 gas technology", "SF6 best practices"],
+  openGraph: {
+    type: "website",
+    title: "SF6 Gas News & Insights",
+    description: "Latest news, insights, and technical articles about SF6 gas solutions, equipment, and industry developments",
+  },
 };
 
 export const dynamic = "auto";
@@ -76,6 +83,17 @@ export default async function Page({
     <Section>
       <Container>
         <div className="space-y-8">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>SF6 Gas News & Insights</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
           <Prose>
             <h2>All Posts</h2>
             <p className="text-muted-foreground">
