@@ -178,55 +178,50 @@ export default function ContactPage() {
             </div>
             <div className="lg:w-1/2">
               <div className="bg-white p-8 rounded-lg shadow-sm">
-                <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
-                <form action="https://inquiry.sf6sf6.com/update.php" method="POST" className="space-y-4">
-                  <input type="hidden" name="from_company" value="SF6 Relations" />
-                  <input type="hidden" name="referer" value="https://www.sf6relations.com/contact" />
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block mb-2 font-medium">Name</label>
+                <div className="formBox">
+                  <h2 className="border-b border-gray-400 pb-2 mb-4">Get Solution & Price Right Now!</h2>
+                  <p className="mb-6">leave your message here, we'll send you an Email immediately.</p>
+                  <form method="POST" action="//inquiry.sf6sf6.com/updata_ppc.php" className="space-y-4">
+                    <input type="hidden" name="from_company" value="SF6 Relations" />
+                    <input type="hidden" name="referer" value="https://www.sf6relations.com/contact" />
+                    <div className="form-item">
+                      <span className="required text-red-500">*</span>
                       <input 
                         type="text" 
-                        name="name"
-                        className="w-full px-4 py-2 border rounded-lg"
-                        placeholder="Your name"
+                        name="name" 
+                        id="name" 
+                        className="w-full px-4 py-2 border rounded-lg ml-2"
+                        placeholder="Name" 
                         required
                       />
                     </div>
-                    <div>
-                      <label className="block mb-2 font-medium">Email</label>
+                    <div className="form-item">
+                      <span className="required text-red-500">*</span>
                       <input 
                         type="email" 
-                        name="email"
-                        className="w-full px-4 py-2 border rounded-lg"
-                        placeholder="Your email"
+                        name="email" 
+                        id="email" 
+                        className="w-full px-4 py-2 border rounded-lg ml-2"
+                        placeholder="Email" 
                         required
                       />
                     </div>
-                  </div>
-                  <div>
-                    <label className="block mb-2 font-medium">Subject</label>
-                    <input 
-                      type="text" 
-                      name="title"
-                      className="w-full px-4 py-2 border rounded-lg"
-                      placeholder="Subject"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block mb-2 font-medium">Message</label>
-                    <textarea 
-                      name="content"
-                      className="w-full px-4 py-2 border rounded-lg h-32"
-                      placeholder="Your message"
-                      required
-                    ></textarea>
-                  </div>
-                  <Button type="submit" className="w-full bg-blue-800 hover:bg-blue-700 text-white">
-                    Send Message
-                  </Button>
-                </form>
+                    <div className="form-item">
+                      <span className="required text-red-500">*</span>
+                      <input 
+                        type="text" 
+                        name="content" 
+                        id="content" 
+                        className="w-full px-4 py-2 border rounded-lg ml-2"
+                        placeholder="Submit your requirement." 
+                        required
+                      />
+                    </div>
+                    <Button type="submit" className="btn-submit w-full bg-blue-800 hover:bg-blue-700 text-white">
+                      SUBMIT
+                    </Button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
