@@ -1,3 +1,4 @@
+import React from "react";
 import "./globals.css";
 
 import { Inter as FontSans } from "next/font/google";
@@ -63,6 +64,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body className={cn("min-h-screen font-sans antialiased", font.variable)}>
+        {/* ResizeObserver error handler */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.addEventListener('error', function(e) {
+              if (e.message.includes('ResizeObserver loop completed with undelivered notifications')) {
+                e.stopPropagation();
+              }
+            });
+          `
+        }} />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

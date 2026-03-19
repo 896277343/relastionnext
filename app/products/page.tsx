@@ -458,12 +458,16 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
-              <form className="space-y-4">
+              <form method="POST" action="//inquiry.sf6sf6.com/updata_ppc.php" className="space-y-4">
+                <input type="hidden" name="from_company" value="SF6 Relations" />
+                <input type="hidden" name="referer" value="https://www.sf6relations.com/products" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block mb-2 font-medium text-gray-700">Name</label>
                     <input 
                       type="text" 
+                      name="name"
+                      id="name"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Your name"
                       required
@@ -473,6 +477,8 @@ export default function ProductsPage() {
                     <label className="block mb-2 font-medium text-gray-700">Email</label>
                     <input 
                       type="email" 
+                      name="email"
+                      id="email"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Your email"
                       required
@@ -480,22 +486,12 @@ export default function ProductsPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block mb-2 font-medium text-gray-700">Product Interest</label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="">Select a product</option>
-                    <option value="sf6-leak-detector">SF6 Leak Detector</option>
-                    <option value="sf6-room-monitor">SF6 Room Monitor</option>
-                    <option value="sf6-analysis">SF6 Analysis</option>
-                    <option value="sf6-filling-cart">SF6 Filling Cart</option>
-                    <option value="sf6-handling">SF6 Handling</option>
-                    <option value="sf6-regeneration">SF6 Regeneration</option>
-                  </select>
-                </div>
-                <div>
                   <label className="block mb-2 font-medium text-gray-700">Message</label>
                   <textarea 
+                    name="content"
+                    id="content"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
-                    placeholder="Your message"
+                    placeholder="Submit your requirement."
                     required
                   ></textarea>
                 </div>
