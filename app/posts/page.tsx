@@ -24,15 +24,31 @@ import { SearchInput } from "@/components/posts/search-input";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 import type { Metadata } from "next";
+import { siteConfig } from "@/site.config";
 
 export const metadata: Metadata = {
   title: "SF6 Gas News & Insights",
   description: "Latest news, insights, and technical articles about SF6 gas solutions, equipment, and industry developments",
   keywords: ["SF6 gas news", "SF6 equipment insights", "SF6 industry developments", "SF6 gas technology", "SF6 best practices"],
+  alternates: {
+    canonical: `${siteConfig.site_domain}/posts`,
+  },
   openGraph: {
     type: "website",
     title: "SF6 Gas News & Insights",
     description: "Latest news, insights, and technical articles about SF6 gas solutions, equipment, and industry developments",
+    images: [{
+      url: "/opengraph-image.jpeg",
+      width: 1200,
+      height: 630,
+      alt: "SF6 Gas News & Insights",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SF6 Gas News & Insights",
+    description: "Latest news, insights, and technical articles about SF6 gas solutions, equipment, and industry developments",
+    images: ["/twitter-image.jpeg"],
   },
 };
 

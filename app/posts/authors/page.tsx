@@ -3,6 +3,7 @@ import { ArchiveList } from "@/components/archive-list";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import type { Author } from "@/lib/wordpress.d";
 import type { Metadata } from "next";
+import { siteConfig } from "@/site.config";
 
 export const revalidate = 3600;
 
@@ -11,12 +12,24 @@ export const metadata: Metadata = {
   description: "Meet our team of SF6 gas experts and industry professionals",
   keywords: ["SF6 gas experts", "SF6 industry professionals", "SF6 technology specialists", "SF6 gas consultants"],
   alternates: {
-    canonical: "/posts/authors",
+    canonical: `${siteConfig.site_domain}/posts/authors`,
   },
   openGraph: {
     type: "website",
     title: "SF6 Gas Experts",
     description: "Meet our team of SF6 gas experts and industry professionals",
+    images: [{
+      url: "/opengraph-image.jpeg",
+      width: 1200,
+      height: 630,
+      alt: "SF6 Gas Experts",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SF6 Gas Experts",
+    description: "Meet our team of SF6 gas experts and industry professionals",
+    images: ["/twitter-image.jpeg"],
   },
 };
 

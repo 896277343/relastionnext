@@ -23,7 +23,9 @@ export function generateContentMetadata({
     title,
     description,
     keywords: ["SF6 gas", "SF6 equipment", "SF6 technology", "SF6 best practices", ...title.split(/\s+/).filter(word => word.length > 3)],
-    canonical: canonicalUrl,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title,
       description,

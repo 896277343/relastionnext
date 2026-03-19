@@ -3,6 +3,7 @@ import { ArchiveList } from "@/components/archive-list";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import type { Category } from "@/lib/wordpress.d";
 import type { Metadata } from "next";
+import { siteConfig } from "@/site.config";
 
 export const revalidate = 3600;
 
@@ -11,12 +12,24 @@ export const metadata: Metadata = {
   description: "Browse all categories of SF6 gas related content, including equipment, technology, and industry news",
   keywords: ["SF6 gas categories", "SF6 equipment categories", "SF6 technology topics", "SF6 industry categories"],
   alternates: {
-    canonical: "/posts/categories",
+    canonical: `${siteConfig.site_domain}/posts/categories`,
   },
   openGraph: {
     type: "website",
     title: "SF6 Gas Categories",
     description: "Browse all categories of SF6 gas related content, including equipment, technology, and industry news",
+    images: [{
+      url: "/opengraph-image.jpeg",
+      width: 1200,
+      height: 630,
+      alt: "SF6 Gas Categories",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SF6 Gas Categories",
+    description: "Browse all categories of SF6 gas related content, including equipment, technology, and industry news",
+    images: ["/twitter-image.jpeg"],
   },
 };
 

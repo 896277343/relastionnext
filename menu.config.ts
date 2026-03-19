@@ -2,9 +2,9 @@
 export const mainMenu = {
   home: "/",
   products: "/products",
-  projects: "#projects",
-  about: "#about",
-  contact: "#contact",
+  projects: "/projects",
+  about: "/about",
+  contact: "/contact",
 };
 
 export const contentMenu = {

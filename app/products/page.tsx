@@ -13,7 +13,9 @@ export const metadata: Metadata = {
   title: "SF6 Gas Equipment Products | SF6 Relations",
   description: "High-quality SF6 gas equipment including leak detectors, room monitors, analyzers, filling carts, handling systems, and regeneration systems for various industrial applications.",
   keywords: ["SF6 gas equipment", "SF6 leak detector", "SF6 room monitor", "SF6 analyzer", "SF6 filling cart", "SF6 handling", "SF6 regeneration", "SF6 gas solutions"],
-  canonical: `${siteConfig.site_domain}/products`,
+  alternates: {
+    canonical: `${siteConfig.site_domain}/products`,
+  },
   openGraph: {
     type: "website",
     title: "SF6 Gas Equipment Products | SF6 Relations",

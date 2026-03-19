@@ -2,9 +2,37 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Script from "next/script";
+import type { Metadata } from "next";
+import { siteConfig } from "@/site.config";
 
 // Icons
 import { ChevronRight, MapPin, Phone, Mail, Clock, CheckCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "SF6 Gas Equipment Manufacturer | SF6 Relations",
+  description: "With 25 years of experience in sulfur hexafluoride gas solutions, we provide high-quality SF6 gas equipment and comprehensive lifecycle management.",
+  keywords: ["SF6 gas equipment", "SF6 gas manufacturer", "SF6 gas solutions", "SF6 leak detector", "SF6 room monitor", "SF6 analysis", "SF6 filling cart", "SF6 handling", "SF6 regeneration"],
+  alternates: {
+    canonical: siteConfig.site_domain,
+  },
+  openGraph: {
+    type: "website",
+    title: "SF6 Gas Equipment Manufacturer | SF6 Relations",
+    description: "With 25 years of experience in sulfur hexafluoride gas solutions, we provide high-quality SF6 gas equipment and comprehensive lifecycle management.",
+    images: [{
+      url: "/opengraph-image.jpeg",
+      width: 1200,
+      height: 630,
+      alt: "SF6 Gas Equipment Manufacturer",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SF6 Gas Equipment Manufacturer | SF6 Relations",
+    description: "With 25 years of experience in sulfur hexafluoride gas solutions, we provide high-quality SF6 gas equipment and comprehensive lifecycle management.",
+    images: ["/twitter-image.jpeg"],
+  },
+};
 
 // This page is using the craft.tsx component and design system
 export default function Home() {
@@ -49,7 +77,7 @@ export default function Home() {
                 "@type": "Product",
                 "name": "SF6 Leak Detector",
                 "description": "Infrared Principle Portable SF6 Leakage Detection, Built-in Air Pump, ppm Precision, Stability and Durability, 10 Years of Sensor Life",
-                "url": "#products",
+                "url": "/products/",
                 "brand": {
                   "@type": "Organization",
                   "name": "SF6 Relations"
@@ -66,7 +94,7 @@ export default function Home() {
                 "@type": "Product",
                 "name": "SF6 Room Monitor",
                 "description": "7 * 24-hour full-day detection of SF6 gas leakage and detection of oxygen concentration and environmental temperature and humidity.",
-                "url": "#products",
+                "url": "/products/",
                 "brand": {
                   "@type": "Organization",
                   "name": "SF6 Relations"
@@ -83,7 +111,7 @@ export default function Home() {
                 "@type": "Product",
                 "name": "SF6 Analysis",
                 "description": "Portable SF6 gas quality comprehensive analysis to detect sulfur hexafluoride purity, humidity and decomposition products SO2 CO H2S",
-                "url": "#products",
+                "url": "/products/",
                 "brand": {
                   "@type": "Organization",
                   "name": "SF6 Relations"
@@ -100,7 +128,7 @@ export default function Home() {
                 "@type": "Product",
                 "name": "SF6 Filling Cart",
                 "description": "For evacuation of air and refilling of gas compartments from SF6 gas bottles",
-                "url": "#products",
+                "url": "/products/",
                 "brand": {
                   "@type": "Organization",
                   "name": "SF6 Relations"
@@ -117,7 +145,7 @@ export default function Home() {
                 "@type": "Product",
                 "name": "SF6 Handling",
                 "description": "For recovery and filter SF6 gas from gas compartment",
-                "url": "#products",
+                "url": "/products/",
                 "brand": {
                   "@type": "Organization",
                   "name": "SF6 Relations"
@@ -134,7 +162,7 @@ export default function Home() {
                 "@type": "Product",
                 "name": "SF6 Regeneration",
                 "description": "SF6 regeneration system, after regeneration treatment meeting IEC60480 specification.",
-                "url": "#products",
+                "url": "/products/",
                 "brand": {
                   "@type": "Organization",
                   "name": "SF6 Relations"
@@ -164,10 +192,10 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button className="bg-white text-blue-800 hover:bg-blue-50">
-                  Get in touch
+                  <Link href="/contact">Get in touch</Link>
                 </Button>
                 <Button className="bg-transparent border border-white hover:bg-white/10">
-                  Learn more
+                  <Link href="/about">Learn more</Link>
                 </Button>
               </div>
             </div>
@@ -431,7 +459,7 @@ const ProductCard = ({ title, description }: { title: string; description: strin
     <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
       <h3 className="text-xl font-semibold mb-3 text-blue-800">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
-      <Link href="#" className="text-blue-800 font-medium flex items-center gap-2">
+      <Link href="/products" className="text-blue-800 font-medium flex items-center gap-2">
         Learn more <ChevronRight size={16} />
       </Link>
     </div>
@@ -444,7 +472,7 @@ const ProjectCard = ({ title, description }: { title: string; description: strin
     <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
       <h3 className="text-xl font-semibold mb-3 text-blue-800">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
-      <Link href="#" className="text-blue-800 font-medium flex items-center gap-2">
+      <Link href="/projects" className="text-blue-800 font-medium flex items-center gap-2">
         View details <ChevronRight size={16} />
       </Link>
     </div>

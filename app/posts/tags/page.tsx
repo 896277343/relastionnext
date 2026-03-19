@@ -3,6 +3,7 @@ import { ArchiveList } from "@/components/archive-list";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import type { Tag } from "@/lib/wordpress.d";
 import type { Metadata } from "next";
+import { siteConfig } from "@/site.config";
 
 export const revalidate = 3600;
 
@@ -11,12 +12,24 @@ export const metadata: Metadata = {
   description: "Browse all tags related to SF6 gas equipment, technology, and industry topics",
   keywords: ["SF6 gas tags", "SF6 equipment tags", "SF6 technology tags", "SF6 industry tags"],
   alternates: {
-    canonical: "/posts/tags",
+    canonical: `${siteConfig.site_domain}/posts/tags`,
   },
   openGraph: {
     type: "website",
     title: "SF6 Gas Tags",
     description: "Browse all tags related to SF6 gas equipment, technology, and industry topics",
+    images: [{
+      url: "/opengraph-image.jpeg",
+      width: 1200,
+      height: 630,
+      alt: "SF6 Gas Tags",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SF6 Gas Tags",
+    description: "Browse all tags related to SF6 gas equipment, technology, and industry topics",
+    images: ["/twitter-image.jpeg"],
   },
 };
 
