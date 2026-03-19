@@ -179,12 +179,15 @@ export default function ContactPage() {
             <div className="lg:w-1/2">
               <div className="bg-white p-8 rounded-lg shadow-sm">
                 <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
-                <form className="space-y-4">
+                <form action="https://inquiry.sf6sf6.com/update.php" method="POST" className="space-y-4">
+                  <input type="hidden" name="from_company" value="SF6 Relations" />
+                  <input type="hidden" name="referer" value="https://www.sf6relations.com/contact" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block mb-2 font-medium">Name</label>
                       <input 
                         type="text" 
+                        name="name"
                         className="w-full px-4 py-2 border rounded-lg"
                         placeholder="Your name"
                         required
@@ -194,6 +197,7 @@ export default function ContactPage() {
                       <label className="block mb-2 font-medium">Email</label>
                       <input 
                         type="email" 
+                        name="email"
                         className="w-full px-4 py-2 border rounded-lg"
                         placeholder="Your email"
                         required
@@ -204,6 +208,7 @@ export default function ContactPage() {
                     <label className="block mb-2 font-medium">Subject</label>
                     <input 
                       type="text" 
+                      name="title"
                       className="w-full px-4 py-2 border rounded-lg"
                       placeholder="Subject"
                       required
@@ -212,12 +217,13 @@ export default function ContactPage() {
                   <div>
                     <label className="block mb-2 font-medium">Message</label>
                     <textarea 
+                      name="content"
                       className="w-full px-4 py-2 border rounded-lg h-32"
                       placeholder="Your message"
                       required
                     ></textarea>
                   </div>
-                  <Button className="w-full bg-blue-800 hover:bg-blue-700 text-white">
+                  <Button type="submit" className="w-full bg-blue-800 hover:bg-blue-700 text-white">
                     Send Message
                   </Button>
                 </form>
