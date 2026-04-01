@@ -85,7 +85,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-LEAK-001",
                   "category": "SF6 Gas Detection Equipment",
-                  "image": "https://www.sf6relations.com/images/sf6-leak-detector.jpg",
+                  "image": "/pics/products/sf6-leak-detector-p.jpg",
                   "review": {
                     "@type": "Review",
                     "reviewRating": {
@@ -116,7 +116,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-MONITOR-001",
                   "category": "SF6 Gas Monitoring Equipment",
-                  "image": "https://www.sf6relations.com/images/sf6-room-monitor.jpg",
+                  "image": "/pics/products/sf6-room-monitor-p.jpg",
                   "review": {
                     "@type": "Review",
                     "reviewRating": {
@@ -147,7 +147,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-ANALYSIS-001",
                   "category": "SF6 Gas Analysis Equipment",
-                  "image": "https://www.sf6relations.com/images/sf6-analysis.jpg",
+                  "image": "/pics/products/sf6-analysis-p.jpg",
                   "review": {
                     "@type": "Review",
                     "reviewRating": {
@@ -178,7 +178,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-FILL-001",
                   "category": "SF6 Gas Handling Equipment",
-                  "image": "https://www.sf6relations.com/images/sf6-filling-cart.jpg",
+                  "image": "/pics/products/sf6-gas-filling-cart-p.jpg",
                   "review": {
                     "@type": "Review",
                     "reviewRating": {
@@ -209,7 +209,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-HANDLING-001",
                   "category": "SF6 Gas Handling Equipment",
-                  "image": "https://www.sf6relations.com/images/sf6-handling.jpg",
+                  "image": "/pics/products/sf6-service-carts-p.jpg",
                   "review": {
                     "@type": "Review",
                     "reviewRating": {
@@ -240,7 +240,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-REGEN-001",
                   "category": "SF6 Gas Regeneration Equipment",
-                  "image": "https://www.sf6relations.com/images/sf6-regeneration.jpg",
+                  "image": "/pics/products/sf6-regeneration-system-p.jpg",
                   "review": {
                     "@type": "Review",
                     "reviewRating": {
@@ -346,7 +346,7 @@ export default function ProductsPage() {
                 "Stable and durable design",
                 "10 years of sensor life"
               ]}
-              image="https://www.sf6relations.com/images/sf6-leak-detector.jpg"
+              image="/pics/products/sf6-leak-detector-p.jpg"
             />
             
             <ProductCard 
@@ -360,66 +360,109 @@ export default function ProductsPage() {
                 "Temperature and humidity sensing",
                 "Alarm system for safety"
               ]}
-              image="https://www.sf6relations.com/images/sf6-room-monitor.jpg"
+              image="/pics/products/sf6-room-monitor-p.jpg"
               reverse
             />
             
             <ProductCard 
-              id="sf6-analysis"
-              title="SF6 Analysis"
-              description="Portable SF6 gas quality comprehensive analysis to detect sulfur hexafluoride purity, humidity and decomposition products SO2 CO H2S"
+              id="sf6-gas-filling-kit"
+              title="SF6 Gas Filling Kit"
+              description="Comprehensive SF6 gas filling system with precise pressure control, vacuum pump, and gas recovery capabilities."
               features={[
-                "Comprehensive gas quality analysis",
-                "Detects SF6 purity",
-                "Measures humidity levels",
-                "Identifies decomposition products (SO2, CO, H2S)",
-                "Portable and easy to use"
+                "Precise pressure control system",
+                "Built-in vacuum pump",
+                "SF6 gas recovery capability",
+                "Digital pressure and temperature display",
+                "High flow rate for efficient filling"
               ]}
-              image="https://www.sf6relations.com/images/sf6-analysis.jpg"
+              image="/pics/products/sf6-gas-filling-kit-p.jpg"
             />
             
             <ProductCard 
-              id="sf6-filling-cart"
-              title="SF6 Filling Cart"
-              description="For evacuation of air and refilling of gas compartments from SF6 gas bottles"
+              id="mobile-sf6-vacuum-pump-unit"
+              title="Mobile SF6 Vacuum Pump Unit"
+              description="High-performance mobile vacuum pump unit designed for SF6 gas evacuation and dehydration."
               features={[
-                "Efficient air evacuation",
-                "Precise SF6 gas refilling",
-                "Compatible with standard SF6 bottles",
-                "Mobile design for easy maneuverability",
-                "Safety features for operator protection"
+                "High vacuum capacity (40 m³/h)",
+                "Ultimate vacuum ≤10 Pa",
+                "Mobile design with wheels",
+                "Digital vacuum gauge",
+                "Automatic temperature control"
               ]}
-              image="https://www.sf6relations.com/images/sf6-filling-cart.jpg"
+              image="/pics/products/mobile-sf6-vacuum-pump-unit-p.jpg"
               reverse
             />
             
             <ProductCard 
-              id="sf6-handling"
-              title="SF6 Handling"
-              description="For recovery and filter SF6 gas from gas compartment"
+              id="sf6-gas-filling-cart"
+              title="SF6 Gas Filling Cart"
+              description="Mobile SF6 gas filling cart with integrated vacuum pump, gas recovery system, and precise filling capabilities."
               features={[
-                "Efficient SF6 gas recovery",
-                "Built-in filtration system",
-                "High recovery rate",
-                "Compact and portable design",
-                "Easy to operate"
+                "Mobile design with sturdy wheels",
+                "Integrated vacuum pump (30 m³/h)",
+                "SF6 gas recovery capability",
+                "Precise pressure control system",
+                "Digital display for pressure and temperature"
               ]}
-              image="https://www.sf6relations.com/images/sf6-handling.jpg"
+              image="/pics/products/sf6-gas-filling-cart-p.jpg"
             />
             
             <ProductCard 
-              id="sf6-regeneration"
-              title="SF6 Regeneration"
-              description="SF6 regeneration system, after regeneration treatment meeting IEC60480 specification."
+              id="sf6-service-carts"
+              title="SF6 Service Carts"
+              description="Comprehensive SF6 service cart with integrated vacuum pump, gas recovery, purification, and filling capabilities."
               features={[
-                "Meets IEC60480 specification",
-                "High-quality regeneration process",
-                "Removes impurities and moisture",
-                "Extends SF6 gas life",
-                "Reduces environmental impact"
+                "Complete SF6 gas management solution",
+                "High capacity vacuum pump (40 m³/h)",
+                "SF6 gas recovery and purification",
+                "Precise filling and pressure control",
+                "Digital touchscreen control"
               ]}
-              image="https://www.sf6relations.com/images/sf6-regeneration.jpg"
+              image="/pics/products/sf6-service-carts-p.jpg"
               reverse
+            />
+            
+            <ProductCard 
+              id="sf6-regeneration-system"
+              title="SF6 Regeneration System"
+              description="Advanced SF6 gas regeneration system for purifying and reclaiming used SF6 gas."
+              features={[
+                "High purification efficiency (99.9%)",
+                "Removes moisture, impurities, and decomposition products",
+                "Continuous operation capability",
+                "Digital monitoring and control",
+                "Large processing capacity"
+              ]}
+              image="/pics/products/sf6-regeneration-system-p.jpg"
+            />
+            
+            <ProductCard 
+              id="sf6-gas-analyzer"
+              title="SF6 Gas Analyzer"
+              description="Advanced SF6 gas analyzer for comprehensive analysis of SF6 gas quality, including moisture, purity, and decomposition products."
+              features={[
+                "Comprehensive SF6 gas analysis",
+                "Moisture measurement (ppm)",
+                "Purity analysis (volume%)",
+                "Decomposition product detection",
+                "Real-time data display"
+              ]}
+              image="/pics/products/sf6-gas-analyzer-p.jpg"
+              reverse
+            />
+            
+            <ProductCard 
+              id="sf6-gas-fittings"
+              title="SF6 Gas Fittings"
+              description="High-quality SF6 gas fittings and accessories for safe and reliable SF6 gas handling."
+              features={[
+                "High-quality stainless steel construction",
+                "Leak-proof design",
+                "Corrosion resistant",
+                "Wide range of sizes and types",
+                "Compliant with international standards"
+              ]}
+              image="/pics/products/sf6-gas-fittings-p.jpg"
             />
           </div>
         </div>
@@ -460,7 +503,7 @@ export default function ProductsPage() {
               <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
               <form method="POST" action="//inquiry.sf6sf6.com/updata_ppc.php" className="space-y-4">
                 <input type="hidden" name="from_company" value="SF6 Relations" />
-                <input type="hidden" name="referer" value="https://www.sf6relations.com/products" />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block mb-2 font-medium text-gray-700">Name</label>
@@ -580,20 +623,41 @@ const ProductCard = ({
   image: string; 
   reverse?: boolean 
 }) => {
+  // Map product titles to their respective slugs
+  const productSlugs: Record<string, string> = {
+    "SF6 Leak Detector": "sf6-leak-detector",
+    "SF6 Room Monitor": "sf6-room-monitor",
+    "SF6 Gas Filling Kit": "sf6-gas-filling-kit",
+    "Mobile SF6 Vacuum Pump Unit": "mobile-sf6-vacuum-pump-unit",
+    "SF6 Gas Filling Cart": "sf6-gas-filling-cart",
+    "SF6 Service Carts": "sf6-service-carts",
+    "SF6 Regeneration System": "sf6-regeneration-system",
+    "SF6 Gas Analyzer": "sf6-gas-analyzer",
+    "SF6 Gas Fittings": "sf6-gas-fittings"
+  };
+  
+  const slug = productSlugs[title] || id;
+  
   return (
     <div id={id} className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 items-center`}>
       <div className="lg:w-1/2">
         <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
-          <img 
-            src={image} 
-            alt={title} 
-            className="w-full h-full object-cover"
-          />
+          <Link href={`/products/${slug}`}>
+            <img 
+              src={image} 
+              alt={title} 
+              className="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+            />
+          </Link>
         </div>
       </div>
       <div className="lg:w-1/2 space-y-6">
         <div>
-          <h3 className="text-2xl font-bold mb-3 text-blue-800">{title}</h3>
+          <h3 className="text-2xl font-bold mb-3 text-blue-800">
+            <Link href={`/products/${slug}`} className="hover:underline">
+              {title}
+            </Link>
+          </h3>
           <p className="text-gray-600 mb-6">{description}</p>
         </div>
         
@@ -607,8 +671,10 @@ const ProductCard = ({
         </ul>
         
         <div className="flex flex-wrap gap-4 pt-4">
-          <Button className="bg-blue-800 hover:bg-blue-700 text-white">
-            Learn More
+          <Button asChild className="bg-blue-800 hover:bg-blue-700 text-white">
+            <Link href={`/products/${slug}`}>
+              Learn More
+            </Link>
           </Button>
           <Button className="bg-transparent border border-blue-800 text-blue-800 hover:bg-blue-50">
             Request Quote

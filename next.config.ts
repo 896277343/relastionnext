@@ -18,16 +18,7 @@ const nextConfig: NextConfig = {
       : [],
   },
   async redirects() {
-    if (!wordpressUrl) {
-      return [];
-    }
-    return [
-      {
-        source: "/admin",
-        destination: `${wordpressUrl}/wp-admin`,
-        permanent: true,
-      },
-    ];
+    return [];
   },
 };
 

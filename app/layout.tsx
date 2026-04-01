@@ -67,11 +67,31 @@ export default function RootLayout({
         {/* ResizeObserver error handler */}
         <script dangerouslySetInnerHTML={{
           __html: `
+            // Handle ResizeObserver loop errors
             window.addEventListener('error', function(e) {
               if (e.message.includes('ResizeObserver loop completed with undelivered notifications')) {
                 e.stopPropagation();
+                e.preventDefault();
               }
             });
+            
+            // Also handle ResizeObserver specifically
+            if (typeof ResizeObserver !== 'undefined') {
+              const originalResizeObserver = ResizeObserver;
+              ResizeObserver = class extends originalResizeObserver {
+                constructor(callback) {
+                  super((entries, observer) => {
+                    try {
+                      callback(entries, observer);
+                    } catch (e) {
+                      if (!e.message.includes('ResizeObserver loop completed with undelivered notifications')) {
+                        throw e;
+                      }
+                    }
+                  });
+                }
+              };
+            }
           `
         }} />
         <ThemeProvider

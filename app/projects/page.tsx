@@ -73,7 +73,7 @@ export default function ProjectsPage() {
                   "@type": "Project",
                   "name": "SF6 Gas handling for Underground Substation",
                   "description": "SF6 gas is increasingly used in confined Spaces. Underground substations use a lot of high-voltage equipment. SF6 Gas safety solutions.",
-                  "url": "https://www.sf6relations.com/projects#underground-substation"
+                  "url": "https://www.sf6relations.com/projects/sf6-gas-handling-for-underground-substation"
                 }
               },
               {
@@ -188,11 +188,21 @@ export default function ProjectsPage() {
 
 // Project Card Component
 const ProjectCard = ({ id, title, description }: { id: string; title: string; description: string }) => {
+  // Map project IDs to their respective paths
+  const projectPaths: Record<string, string> = {
+    "underground-substation": "/projects/sf6-gas-handling-for-underground-substation",
+    "gis-manufacturers": "#gis-manufacturers",
+    "ultra-high-voltage": "#ultra-high-voltage",
+    "regeneration-base": "#regeneration-base"
+  };
+
+  const href = projectPaths[id] || "#";
+
   return (
     <div id={id} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
       <h3 className="text-xl font-semibold mb-3 text-blue-800">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
-      <Link href="#" className="text-blue-800 font-medium flex items-center gap-2">
+      <Link href={href} className="text-blue-800 font-medium flex items-center gap-2">
         View details <ChevronRight size={16} />
       </Link>
     </div>

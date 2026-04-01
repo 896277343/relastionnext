@@ -271,26 +271,32 @@ export default function Home() {
             <ProductCard 
               title="SF6 Leak Detector"
               description="Infrared Principle Portable SF6 Leakage Detection, Built-in Air Pump, ppm Precision, Stability and Durability, 10 Years of Sensor Life"
+              image="/pics/products/sf6-leak-detector-h.jpg"
             />
             <ProductCard 
               title="SF6 Room Monitor"
               description="7 * 24-hour full-day detection of SF6 gas leakage and detection of oxygen concentration and environmental temperature and humidity."
+              image="/pics/products/sf6-room-monitor-h.jpg"
             />
             <ProductCard 
               title="SF6 Analysis"
               description="Portable SF6 gas quality comprehensive analysis to detect sulfur hexafluoride purity, humidity and decomposition products SO2 CO H2S"
+              image="/pics/products/sf6-analysis-h.jpg"
             />
             <ProductCard 
               title="SF6 Filling Cart"
               description="For evacuation of air and refilling of gas compartments from SF6 gas bottles"
+              image="/pics/products/sf6-filling-cart-h.jpg"
             />
             <ProductCard 
               title="SF6 Handling"
               description="For recovery and filter SF6 gas from gas compartment"
+              image="/pics/products/sf6-handling-h.jpg"
             />
             <ProductCard 
               title="SF6 Regeneration"
               description="SF6 regeneration system, after regeneration treatment meeting IEC60480 specification."
+              image="/pics/products/sf6-regeneration-h.jpg"
             />
           </div>
         </div>
@@ -309,18 +315,22 @@ export default function Home() {
             <ProjectCard 
               title="SF6 Gas handling for Underground Substation"
               description="SF6 gas is increasingly used in confined Spaces. Underground substations use a lot of high-voltage equipment. SF6 Gas safety solutions."
+              image="/pics/projects/underground-substation-h.jpg"
             />
             <ProjectCard 
               title="SF6 use for Gas Insulated Switchgear Manufacturers"
               description="A large amount of SF6 gas is needed to test the equipment during the R&D and manufacturing process. We provide solutions for reusing SF6 gas for experiments."
+              image="/pics/projects/gis-manufacturers-h.jpg"
             />
             <ProjectCard 
               title="Ultra-high voltage SF6 Handling equipment"
               description="We have rich experience in field service 750KV and 1000KV substation working experience, including Gas Insulated Lines."
+              image="/pics/projects/ultra-high-voltage-h.jpg"
             />
             <ProjectCard 
               title="SF6 Gas Handling and Regeneration base"
               description="SF6 handling base has a large recycling & regeneration & vacuum equipment. Efficient regeneration of SF6 and Achieving whole-life system management of SF6 gas."
+              image="/pics/projects/regeneration-base-h.jpg"
             />
           </div>
         </div>
@@ -335,6 +345,25 @@ export default function Home() {
               With 25 years of experience in SF6 gas equipment manufacturing, we are experts in sulfur hexafluoride gas solutions. Our commitment to quality and innovation has made us a trusted partner for businesses worldwide.
             </p>
           </div>
+          {/* Factory Gallery Carousel */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold mb-6 text-center">Factory Strength</h3>
+            <div className="relative overflow-hidden">
+              <div className="flex gap-4 animate-scroll">
+                {[1, 2, 3, 4, 1, 2, 3, 4].map((num, index) => (
+                  <div key={index} className="flex-shrink-0 w-72 h-48 bg-gray-100 rounded-lg overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={`/pics/company/company-${num}-h.jpg`}
+                      alt={`Factory ${num}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="bg-gray-50 p-8 rounded-lg">
             <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
             <p className="text-gray-600 mb-6">
@@ -369,6 +398,25 @@ export default function Home() {
                   <h4 className="font-semibold mb-1">Customer Service</h4>
                   <p className="text-gray-600">We provide exceptional support to our customers worldwide.</p>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Partners Carousel */}
+          <div className="mt-12">
+            <h3 className="text-2xl font-semibold mb-6 text-center">Our Partners</h3>
+            <div className="relative overflow-hidden">
+              <div className="flex gap-4 animate-scroll">
+                {[1, 2, 3, 4, 1, 2, 3, 4].map((num, index) => (
+                  <div key={index} className="flex-shrink-0 w-72 h-48 bg-gray-100 rounded-lg overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={`/pics/partners/partner-${num}-h.jpg`}
+                      alt={`Partner ${num}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -454,9 +502,19 @@ export default function Home() {
 }
 
 // Product Card Component
-const ProductCard = ({ title, description }: { title: string; description: string }) => {
+const ProductCard = ({ title, description, image }: { title: string; description: string; image?: string }) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+      {image && (
+        <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src={image} 
+            alt={title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
       <h3 className="text-xl font-semibold mb-3 text-blue-800">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
       <Link href="/products" className="text-blue-800 font-medium flex items-center gap-2">
@@ -467,9 +525,19 @@ const ProductCard = ({ title, description }: { title: string; description: strin
 };
 
 // Project Card Component
-const ProjectCard = ({ title, description }: { title: string; description: string }) => {
+const ProjectCard = ({ title, description, image }: { title: string; description: string; image?: string }) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+      {image && (
+        <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src={image} 
+            alt={title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
       <h3 className="text-xl font-semibold mb-3 text-blue-800">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
       <Link href="/projects" className="text-blue-800 font-medium flex items-center gap-2">
