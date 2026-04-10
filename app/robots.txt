@@ -4,10 +4,8 @@ Allow: /
 # Sitemap
 Sitemap: https://www.sf6relations.com/sitemap.xml
 
-# Crawl delay
-Crawl-delay: 10
-
 # Disallow specific paths
+Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /__nextjs_placeholder__/

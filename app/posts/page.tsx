@@ -26,31 +26,79 @@ import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbP
 import type { Metadata } from "next";
 import { siteConfig } from "@/site.config";
 
-export const metadata: Metadata = {
-  title: "SF6 Gas News & Insights",
-  description: "Latest news, insights, and technical articles about SF6 gas solutions, equipment, and industry developments",
-  keywords: ["SF6 gas news", "SF6 equipment insights", "SF6 industry developments", "SF6 gas technology", "SF6 best practices"],
-  alternates: {
-    canonical: `${siteConfig.site_domain}/posts`,
-  },
-  openGraph: {
-    type: "website",
-    title: "SF6 Gas News & Insights",
-    description: "Latest news, insights, and technical articles about SF6 gas solutions, equipment, and industry developments",
-    images: [{
-      url: "/opengraph-image.jpeg",
-      width: 1200,
-      height: 630,
-      alt: "SF6 Gas News & Insights",
-    }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "SF6 Gas News & Insights",
-    description: "Latest news, insights, and technical articles about SF6 gas solutions, equipment, and industry developments",
-    images: ["/twitter-image.jpeg"],
-  },
-};
+const postsTitle = "SF6 Gas News & Insights";
+const postsDescription =
+  "Latest news, insights, and technical articles about SF6 gas solutions, equipment, and industry developments";
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{
+    author?: string;
+    tag?: string;
+    category?: string;
+    page?: string;
+    search?: string;
+  }>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const page = params.page ? parseInt(params.page, 10) : 1;
+  const isFiltered = !!(params.author || params.tag || params.category || params.search);
+  const canonicalParams = new URLSearchParams();
+
+  if (page > 1) canonicalParams.set("page", String(page));
+  if (params.author) canonicalParams.set("author", params.author);
+  if (params.tag) canonicalParams.set("tag", params.tag);
+  if (params.category) canonicalParams.set("category", params.category);
+  if (params.search) canonicalParams.set("search", params.search);
+
+  const canonical = `${siteConfig.site_domain}/posts${canonicalParams.toString() ? `?${canonicalParams.toString()}` : ""}`;
+  const pageSuffix = page > 1 ? ` - Page ${page}` : "";
+
+  return {
+    title: `${postsTitle}${pageSuffix}`,
+    description: postsDescription,
+    keywords: [
+      "SF6 gas news",
+      "SF6 equipment insights",
+      "SF6 industry developments",
+      "SF6 gas technology",
+      "SF6 best practices",
+    ],
+    alternates: {
+      canonical,
+    },
+    robots: isFiltered
+      ? {
+          index: false,
+          follow: true,
+        }
+      : {
+          index: true,
+          follow: true,
+        },
+    openGraph: {
+      type: "website",
+      title: `${postsTitle}${pageSuffix}`,
+      description: postsDescription,
+      url: canonical,
+      images: [
+        {
+          url: "/opengraph-image.jpeg",
+          width: 1200,
+          height: 630,
+          alt: postsTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${postsTitle}${pageSuffix}`,
+      description: postsDescription,
+      images: ["/twitter-image.jpeg"],
+    },
+  };
+}
 
 export const dynamic = "auto";
 export const revalidate = 3600;
@@ -111,7 +159,7 @@ export default async function Page({
             </BreadcrumbList>
           </Breadcrumb>
           <Prose>
-            <h2>All Posts</h2>
+            <h1>All Posts</h1>
             <p className="text-muted-foreground">
               {total} {total === 1 ? "post" : "posts"} found
               {search && " matching your search"}

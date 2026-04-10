@@ -1,4 +1,5 @@
 // Next.js Imports
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Script from "next/script";
@@ -76,7 +77,7 @@ export default function ProductsPage() {
                   "url": "https://www.sf6relations.com/products#sf6-leak-detector",
                   "brand": {
                     "@type": "Organization",
-                    "name": "SF6 Relations"
+                    "name": siteConfig.brand.legalName
                   },
                   "offers": {
                     "@type": "Offer",
@@ -85,16 +86,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-LEAK-001",
                   "category": "SF6 Gas Detection Equipment",
-                  "image": "/pics/products/sf6-leak-detector-p.jpg",
-                  "review": {
-                    "@type": "Review",
-                    "reviewRating": {
-                      "@type": "Rating",
-                      "ratingValue": "4.9",
-                      "bestRating": "5"
-                    },
-                    "reviewCount": "120"
-                  }
+                  "image": "/pics/products/sf6-leak-detector-p.jpg"
                 }
               },
               {
@@ -107,7 +99,7 @@ export default function ProductsPage() {
                   "url": "https://www.sf6relations.com/products#sf6-room-monitor",
                   "brand": {
                     "@type": "Organization",
-                    "name": "SF6 Relations"
+                    "name": siteConfig.brand.legalName
                   },
                   "offers": {
                     "@type": "Offer",
@@ -116,16 +108,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-MONITOR-001",
                   "category": "SF6 Gas Monitoring Equipment",
-                  "image": "/pics/products/sf6-room-monitor-p.jpg",
-                  "review": {
-                    "@type": "Review",
-                    "reviewRating": {
-                      "@type": "Rating",
-                      "ratingValue": "4.8",
-                      "bestRating": "5"
-                    },
-                    "reviewCount": "95"
-                  }
+                  "image": "/pics/products/sf6-room-monitor-p.jpg"
                 }
               },
               {
@@ -138,7 +121,7 @@ export default function ProductsPage() {
                   "url": "https://www.sf6relations.com/products#sf6-analysis",
                   "brand": {
                     "@type": "Organization",
-                    "name": "SF6 Relations"
+                    "name": siteConfig.brand.legalName
                   },
                   "offers": {
                     "@type": "Offer",
@@ -147,16 +130,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-ANALYSIS-001",
                   "category": "SF6 Gas Analysis Equipment",
-                  "image": "/pics/products/sf6-analysis-p.jpg",
-                  "review": {
-                    "@type": "Review",
-                    "reviewRating": {
-                      "@type": "Rating",
-                      "ratingValue": "4.9",
-                      "bestRating": "5"
-                    },
-                    "reviewCount": "88"
-                  }
+                  "image": "/pics/products/sf6-analysis-p.jpg"
                 }
               },
               {
@@ -169,7 +143,7 @@ export default function ProductsPage() {
                   "url": "https://www.sf6relations.com/products#sf6-filling-cart",
                   "brand": {
                     "@type": "Organization",
-                    "name": "SF6 Relations"
+                    "name": siteConfig.brand.legalName
                   },
                   "offers": {
                     "@type": "Offer",
@@ -178,16 +152,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-FILL-001",
                   "category": "SF6 Gas Handling Equipment",
-                  "image": "/pics/products/sf6-gas-filling-cart-p.jpg",
-                  "review": {
-                    "@type": "Review",
-                    "reviewRating": {
-                      "@type": "Rating",
-                      "ratingValue": "4.7",
-                      "bestRating": "5"
-                    },
-                    "reviewCount": "76"
-                  }
+                  "image": "/pics/products/sf6-gas-filling-cart-p.jpg"
                 }
               },
               {
@@ -200,7 +165,7 @@ export default function ProductsPage() {
                   "url": "https://www.sf6relations.com/products#sf6-handling",
                   "brand": {
                     "@type": "Organization",
-                    "name": "SF6 Relations"
+                    "name": siteConfig.brand.legalName
                   },
                   "offers": {
                     "@type": "Offer",
@@ -209,16 +174,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-HANDLING-001",
                   "category": "SF6 Gas Handling Equipment",
-                  "image": "/pics/products/sf6-service-carts-p.jpg",
-                  "review": {
-                    "@type": "Review",
-                    "reviewRating": {
-                      "@type": "Rating",
-                      "ratingValue": "4.8",
-                      "bestRating": "5"
-                    },
-                    "reviewCount": "65"
-                  }
+                  "image": "/pics/products/sf6-service-carts-p.jpg"
                 }
               },
               {
@@ -231,7 +187,7 @@ export default function ProductsPage() {
                   "url": "https://www.sf6relations.com/products#sf6-regeneration",
                   "brand": {
                     "@type": "Organization",
-                    "name": "SF6 Relations"
+                    "name": siteConfig.brand.legalName
                   },
                   "offers": {
                     "@type": "Offer",
@@ -240,16 +196,7 @@ export default function ProductsPage() {
                   },
                   "productID": "SF6-REGEN-001",
                   "category": "SF6 Gas Regeneration Equipment",
-                  "image": "/pics/products/sf6-regeneration-system-p.jpg",
-                  "review": {
-                    "@type": "Review",
-                    "reviewRating": {
-                      "@type": "Rating",
-                      "ratingValue": "4.9",
-                      "bestRating": "5"
-                    },
-                    "reviewCount": "58"
-                  }
+                  "image": "/pics/products/sf6-regeneration-system-p.jpg"
                 }
               }
             ]
@@ -502,7 +449,7 @@ export default function ProductsPage() {
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
               <form method="POST" action="//inquiry.sf6sf6.com/updata_ppc.php" className="space-y-4">
-                <input type="hidden" name="from_company" value="SF6 Relations" />
+                <input type="hidden" name="from_company" value={siteConfig.brand.legalName} />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -554,17 +501,17 @@ export default function ProductsPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone size={24} className="text-blue-800" />
-                    <span>+86 123 4567 8910</span>
+                    <span>{siteConfig.contact.phone}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail size={24} className="text-blue-800" />
-                    <span>info@sf6relations.com</span>
+                    <span>{siteConfig.contact.email}</span>
                   </div>
                 </div>
               </div>
               
               <div className="bg-white p-8 rounded-lg shadow-sm">
-                <h3 className="text-2xl font-semibold mb-6">Why Choose SF6 Relations</h3>
+                <h3 className="text-2xl font-semibold mb-6">Why Choose {siteConfig.brand.legalName}</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle size={20} className="text-green-600 mt-1 flex-shrink-0" />
@@ -641,12 +588,14 @@ const ProductCard = ({
   return (
     <div id={id} className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 items-center`}>
       <div className="lg:w-1/2">
-        <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+        <div className="relative aspect-video bg-gray-200 rounded-lg overflow-hidden">
           <Link href={`/products/${slug}`}>
-            <img 
-              src={image} 
-              alt={title} 
-              className="w-full h-full object-cover hover:opacity-90 transition-opacity cursor-pointer"
+            <Image
+              src={image}
+              alt={title}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover hover:opacity-90 transition-opacity cursor-pointer"
             />
           </Link>
         </div>

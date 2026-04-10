@@ -382,7 +382,7 @@ export default function ProjectContent() {
                     className="space-y-4"
                     suppressHydrationWarning
                   >
-                    <input type="hidden" name="from_company" value="SF6 Relations" />
+                    <input type="hidden" name="from_company" value={siteConfig.brand.legalName} />
                     <input type="hidden" name="referer" value={`${siteConfig.site_domain}/projects/sf6-gas-handling-for-underground-substation`} />
                     <input type="hidden" name="product_name" value={project.name} />
                     
@@ -436,15 +436,15 @@ export default function ProjectContent() {
                     <h4 className="font-semibold text-gray-900">Contact Information</h4>
                     <div className="flex items-center gap-3 text-gray-600">
                       <Phone className="w-5 h-5 text-blue-500" />
-                      <span>+86 123 4567 8910</span>
+                      <span>{siteConfig.contact.phone}</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-600">
                       <Mail className="w-5 h-5 text-blue-500" />
-                      <span>info@sf6relations.com</span>
+                      <span>{siteConfig.contact.email}</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-600">
                       <Clock className="w-5 h-5 text-blue-500" />
-                      <span>Mon-Fri: 9:00-18:00</span>
+                      <span>{siteConfig.contact.hoursShort}</span>
                     </div>
                   </div>
                 </CardContent>

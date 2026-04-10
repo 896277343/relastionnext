@@ -65,20 +65,20 @@ export default function ContactPage() {
           },
           "mainEntity": {
             "@type": "Organization",
-            "name": "SF6 Relations",
+            "name": siteConfig.brand.legalName,
             "url": "https://www.sf6relations.com",
-            "logo": "https://www.sf6relations.com/logo.svg",
+            "logo": siteConfig.brand.logoUrl,
             "contactPoint": [
               {
                 "@type": "ContactPoint",
-                "telephone": "+86 123 4567 8910",
+                "telephone": siteConfig.contact.phone,
                 "contactType": "customer service",
                 "areaServed": ["Worldwide"],
                 "availableLanguage": ["English", "Chinese"]
               },
               {
                 "@type": "ContactPoint",
-                "email": "info@sf6relations.com",
+                "email": siteConfig.contact.email,
                 "contactType": "customer service",
                 "areaServed": ["Worldwide"],
                 "availableLanguage": ["English", "Chinese"]
@@ -86,7 +86,7 @@ export default function ContactPage() {
             ],
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "300000+ square meters industrial park",
+              "streetAddress": siteConfig.contact.address,
               "addressCountry": "China"
             },
             "openingHoursSpecification": [
@@ -134,19 +134,19 @@ export default function ContactPage() {
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
                   <MapPin size={24} className="text-blue-800" />
-                  <span>300000+ square meters industrial park</span>
+                  <span>{siteConfig.contact.address}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone size={24} className="text-blue-800" />
-                  <span>+86 123 4567 8910</span>
+                  <span>{siteConfig.contact.phone}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail size={24} className="text-blue-800" />
-                  <span>info@sf6relations.com</span>
+                  <span>{siteConfig.contact.email}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock size={24} className="text-blue-800" />
-                  <span>Monday - Friday: 9:00 AM - 6:00 PM</span>
+                  <span>{siteConfig.contact.hoursLong}</span>
                 </div>
               </div>
               

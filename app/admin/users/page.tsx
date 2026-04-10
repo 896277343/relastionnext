@@ -69,8 +69,8 @@ const UsersPage = () => {
                     <SheetTitle>{editingUser ? 'Edit User' : 'Add User'}</SheetTitle>
                   </SheetHeader>
                   <div className="mt-6">
-                    <Form {...form} onSubmit={form.handleSubmit(onSubmit)}>
-                      <div className="space-y-4">
+                    <Form {...form}>
+                      <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
                         <FormField
                           control={form.control}
                           name="username"
@@ -137,11 +137,11 @@ const UsersPage = () => {
                             <Save size={16} className="mr-2" />
                             Save
                           </Button>
-                          <Button variant="ghost" onClick={() => setEditingUser(null)}>
+                          <Button type="button" variant="ghost" onClick={() => setEditingUser(null)}>
                             <X size={16} />
                           </Button>
                         </div>
-                      </div>
+                      </form>
                     </Form>
                   </div>
                 </SheetContent>

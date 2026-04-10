@@ -22,7 +22,12 @@ export function Footer() {
                 height={26.44}
               />
             </Link>
-            <p>{siteConfig.site_description}</p>
+            <div className="space-y-3">
+              <p>{siteConfig.site_description}</p>
+              <p className="text-sm leading-6 text-muted-foreground">
+                {siteConfig.footer.summary}
+              </p>
+            </div>
           </div>
           <div className="flex flex-col gap-2 text-sm">
             <h5 className="font-medium text-base">Website</h5>
@@ -52,8 +57,8 @@ export function Footer() {
         <Container className="border-t not-prose flex flex-col md:flex-row md:gap-2 gap-6 justify-between md:items-center">
           <ThemeToggle />
           <p className="text-muted-foreground">
-            &copy; <a href="https://9d8.dev">9d8</a>. All rights reserved.
-            2025-present.
+            &copy; {siteConfig.footer.copyrightName}. All rights reserved.{" "}
+            {siteConfig.footer.copyrightYears}.
           </p>
         </Container>
       </Section>

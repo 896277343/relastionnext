@@ -1,6 +1,8 @@
 'use client';
 
+import { useState } from "react";
 import { siteConfig } from "@/site.config";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -77,6 +79,9 @@ const product = {
 };
 
 export default function ProductContent() {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const activeImage = product.images[activeImageIndex];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Structured Data for SEO */}
@@ -90,11 +95,11 @@ export default function ProductContent() {
           "sku": product.model,
           "brand": {
             "@type": "Brand",
-            "name": "SF6 Relations"
+            "name": siteConfig.brand.legalName
           },
           "manufacturer": {
             "@type": "Organization",
-            "name": "SF6 Relations"
+            "name": siteConfig.brand.legalName
           },
           "offers": {
             "@type": "Offer",
@@ -104,13 +109,8 @@ export default function ProductContent() {
             "itemCondition": "https://schema.org/NewCondition",
             "seller": {
               "@type": "Organization",
-              "name": "SF6 Relations"
+              "name": siteConfig.brand.legalName
             }
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "192"
           },
           "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -165,28 +165,41 @@ export default function ProductContent() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Product Images */}
             <div className="space-y-4">
-              <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                <img 
-                  src={product.images[0].src} 
-                  alt={product.images[0].alt}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "https://via.placeholder.com/600x600?text=SF6+Gas+Filling+Cart";
-                  }}
+              <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                <Image
+                  src={activeImage.src}
+                  alt={activeImage.alt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
                 />
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {product.images.map((img, index) => (
-                  <div key={index} className="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
-                    <img 
-                      src={img.src} 
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setActiveImageIndex(index)}
+                    aria-label={`View ${img.alt}`}
+                    aria-pressed={activeImageIndex === index}
+                    className={`relative aspect-square rounded-lg overflow-hidden border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-500/30 focus:ring-offset-2 ${
+                      activeImageIndex === index
+                        ? "border-slate-700 shadow-[0_16px_32px_-22px_rgba(15,23,42,0.55)]"
+                        : "border-stone-200 hover:border-slate-400 hover:opacity-90"
+                    }`}
+                  >
+                    <Image
+                      src={img.src}
                       alt={img.alt}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://via.placeholder.com/200x200?text=View+${index + 1}`;
-                      }}
+                      fill
+                      sizes="(min-width: 1024px) 16vw, 33vw"
+                      className="object-cover"
                     />
-                  </div>
+                    <span className="sr-only">
+                      {activeImageIndex === index ? "Current selected image" : "Select this image"}
+                    </span>
+                  </button>
                 ))}
               </div>
             </div>
@@ -194,10 +207,12 @@ export default function ProductContent() {
             {/* Product Info */}
             <div className="space-y-6">
               <div>
-                <Badge className="mb-2" variant="secondary">{product.model}</Badge>
                 <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                   {product.name}
                 </h1>
+                <Badge className="mb-4" variant="secondary">
+                  Model Name: {product.model}
+                </Badge>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   {product.description}
                 </p>
@@ -370,7 +385,7 @@ export default function ProductContent() {
                     className="space-y-4"
                     suppressHydrationWarning
                   >
-                    <input type="hidden" name="from_company" value="SF6 Relations" />
+                    <input type="hidden" name="from_company" value={siteConfig.brand.legalName} />
                     <input type="hidden" name="referer" value={`${siteConfig.site_domain}/products/sf6-gas-filling-cart`} />
                     <input type="hidden" name="product_name" value={product.name} />
                     <input type="hidden" name="product_model" value={product.model} />
@@ -425,15 +440,15 @@ export default function ProductContent() {
                     <h4 className="font-semibold text-gray-900">Contact Information</h4>
                     <div className="flex items-center gap-3 text-gray-600">
                       <Phone className="w-5 h-5 text-blue-500" />
-                      <span>+86 123 4567 8910</span>
+                      <span>{siteConfig.contact.phone}</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-600">
                       <Mail className="w-5 h-5 text-blue-500" />
-                      <span>info@sf6relations.com</span>
+                      <span>{siteConfig.contact.email}</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-600">
                       <Clock className="w-5 h-5 text-blue-500" />
-                      <span>Mon-Fri: 9:00-18:00</span>
+                      <span>{siteConfig.contact.hoursShort}</span>
                     </div>
                   </div>
                 </CardContent>
@@ -450,27 +465,33 @@ export default function ProductContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {product.relatedProducts.map((related, index) => (
               <Card key={index} className="group cursor-pointer hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
-                  <div className="aspect-video bg-gray-100 overflow-hidden">
-                    <img 
-                      src={related.image} 
-                      alt={related.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://via.placeholder.com/400x225?text=${encodeURIComponent(related.name)}`;
-                      }}
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                      {related.name}
-                    </h3>
-                    <div className="flex items-center text-blue-600 mt-2 text-sm">
-                      <span>View Details</span>
-                      <ArrowRight className="w-4 h-4 ml-1" />
+                <Link
+                  href={`/products/${related.slug}`}
+                  className="block h-full"
+                  aria-label={`View details for ${related.name}`}
+                >
+                  <CardContent className="p-0">
+                    <div className="aspect-video bg-gray-100 overflow-hidden">
+                      <img 
+                        src={related.image} 
+                        alt={related.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = `https://via.placeholder.com/400x225?text=${encodeURIComponent(related.name)}`;
+                        }}
+                      />
                     </div>
-                  </div>
-                </CardContent>
+                    <div className="p-4">
+                      <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                        {related.name}
+                      </h3>
+                      <div className="flex items-center text-blue-600 mt-2 text-sm">
+                        <span>View Details</span>
+                        <ArrowRight className="w-4 h-4 ml-1" />
+                      </div>
+                    </div>
+                  </CardContent>
+                </Link>
               </Card>
             ))}
           </div>

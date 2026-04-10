@@ -65,31 +65,29 @@ export default function AboutPage() {
           },
           "mainEntity": {
             "@type": "Organization",
-            "name": "SF6 Relations",
+            "name": siteConfig.brand.legalName,
             "url": "https://www.sf6relations.com",
-            "logo": "https://www.sf6relations.com/logo.svg",
+            "logo": siteConfig.brand.logoUrl,
             "description": "SF6 Gas Solution - Full Lifecycle of SF6 Gas Solution",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "300000+ square meters industrial park",
+              "streetAddress": siteConfig.contact.address,
               "addressCountry": "China"
             },
             "contactPoint": [
               {
                 "@type": "ContactPoint",
-                "telephone": "+86 123 4567 8910",
+                "telephone": siteConfig.contact.phone,
                 "contactType": "customer service"
               },
               {
                 "@type": "ContactPoint",
-                "email": "info@sf6relations.com",
+                "email": siteConfig.contact.email,
                 "contactType": "customer service"
               }
             ],
             "sameAs": [
-              "https://www.linkedin.com/company/sf6relations",
-              "https://twitter.com/sf6relations",
-              "https://facebook.com/sf6relations"
+              ...siteConfig.brand.socialLinks
             ],
             "foundingDate": "1999",
             "foundingLocation": "China",
@@ -221,19 +219,19 @@ export default function AboutPage() {
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <MapPin size={24} />
-                <span>300000+ square meters industrial park</span>
+                <span>{siteConfig.contact.address}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={24} />
-                <span>+86 123 4567 8910</span>
+                <span>{siteConfig.contact.phone}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={24} />
-                <span>info@sf6relations.com</span>
+                <span>{siteConfig.contact.email}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Clock size={24} />
-                <span>Monday - Friday: 9:00 AM - 6:00 PM</span>
+                <span>{siteConfig.contact.hoursLong}</span>
               </div>
             </div>
             <div>

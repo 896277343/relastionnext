@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
 import { Analytics } from "@vercel/analytics/react";
+import { ResizeObserverErrorHandler } from "@/components/utils/resize-observer-error-handler";
 
 import { siteConfig } from "@/site.config";
 import { cn } from "@/lib/utils";
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.site_description,
   keywords: ["SF6 gas", "SF6 equipment", "SF6 leak detector", "SF6 gas analyzer", "SF6 gas handling", "SF6 regeneration", "SF6 gas management"],
-  authors: [{ name: "SF6 Relations" }],
+  authors: [{ name: siteConfig.brand.legalName }],
   metadataBase: new URL(siteConfig.site_domain),
   alternates: {
     canonical: "/",
@@ -64,36 +65,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body className={cn("min-h-screen font-sans antialiased", font.variable)}>
-        {/* ResizeObserver error handler */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            // Handle ResizeObserver loop errors
-            window.addEventListener('error', function(e) {
-              if (e.message.includes('ResizeObserver loop completed with undelivered notifications')) {
-                e.stopPropagation();
-                e.preventDefault();
-              }
-            });
-            
-            // Also handle ResizeObserver specifically
-            if (typeof ResizeObserver !== 'undefined') {
-              const originalResizeObserver = ResizeObserver;
-              ResizeObserver = class extends originalResizeObserver {
-                constructor(callback) {
-                  super((entries, observer) => {
-                    try {
-                      callback(entries, observer);
-                    } catch (e) {
-                      if (!e.message.includes('ResizeObserver loop completed with undelivered notifications')) {
-                        throw e;
-                      }
-                    }
-                  });
-                }
-              };
-            }
-          `
-        }} />
+        <ResizeObserverErrorHandler />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
