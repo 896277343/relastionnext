@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.site_domain}/posts/tags`,
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     type: "website",
     title: "SF6 Gas Tags",

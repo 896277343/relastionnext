@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "gas leak detection system",
     "SF6 ppm detector",
     product.model,
-    "SF6 Relations"
+    siteConfig.brand.legalName
   ],
   alternates: {
     canonical: `${siteConfig.site_domain}/products/sf6-leak-detector`,

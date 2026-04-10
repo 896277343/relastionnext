@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { siteConfig } from '@/site.config';
 import { Eye, EyeOff, Lock, User } from 'lucide-react';
 
 const LoginPage = () => {
@@ -16,16 +17,16 @@ const LoginPage = () => {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // In a real application, you would send the credentials to your authentication API
     console.log('Login data:', { username, password });
-    
+
     // For demo purposes, we'll just simulate a successful login
     setLoading(true);
-    
+
     // Set auth cookie
     document.cookie = 'admin_auth=true; path=/admin; max-age=86400'; // 1 day
-    
+
     setTimeout(() => {
       setLoading(false);
       window.location.href = '/admin';
@@ -46,15 +47,15 @@ const LoginPage = () => {
                   <User size={16} />
                   Username
                 </Label>
-                <Input 
-                  type="text" 
-                  placeholder="Enter your username" 
+                <Input
+                  type="text"
+                  placeholder="Enter your username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
                 />
               </div>
-              
+
               <div>
                 <Label className="flex items-center gap-2">
                   <Lock size={16} />
@@ -77,7 +78,7 @@ const LoginPage = () => {
                   </button>
                 </div>
               </div>
-              
+
               <Button type="submit" className="w-full" disabled={loading}>
                 {loading ? 'Logging in...' : 'Login'}
               </Button>
@@ -85,7 +86,7 @@ const LoginPage = () => {
           </CardContent>
         </Card>
         <p className="text-center text-sm text-gray-500 mt-4">
-          © 2026 SF6 Relations. All rights reserved.
+          &copy; 2026 {siteConfig.brand.legalName}. All rights reserved.
         </p>
       </div>
     </div>

@@ -10,7 +10,7 @@ import { siteConfig } from "@/site.config";
 import { ChevronRight, MapPin, Phone, Mail, Clock, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "SF6 Gas Equipment Manufacturer | SF6 Relations",
+  title: `SF6 Gas Equipment Manufacturer | ${siteConfig.site_name}`,
   description: "With 25 years of experience in sulfur hexafluoride gas solutions, we provide high-quality SF6 gas equipment and comprehensive lifecycle management.",
   keywords: ["SF6 gas equipment", "SF6 gas manufacturer", "SF6 gas solutions", "SF6 leak detector", "SF6 room monitor", "SF6 analysis", "SF6 filling cart", "SF6 handling", "SF6 regeneration"],
   alternates: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "SF6 Gas Equipment Manufacturer | SF6 Relations",
+    title: `SF6 Gas Equipment Manufacturer | ${siteConfig.site_name}`,
     description: "With 25 years of experience in sulfur hexafluoride gas solutions, we provide high-quality SF6 gas equipment and comprehensive lifecycle management.",
     images: [{
       url: "/opengraph-image.jpeg",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SF6 Gas Equipment Manufacturer | SF6 Relations",
+    title: `SF6 Gas Equipment Manufacturer | ${siteConfig.site_name}`,
     description: "With 25 years of experience in sulfur hexafluoride gas solutions, we provide high-quality SF6 gas equipment and comprehensive lifecycle management.",
     images: ["/twitter-image.jpeg"],
   },
@@ -45,7 +45,7 @@ export default function Home() {
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": siteConfig.brand.legalName,
-          "url": "https://www.sf6relations.com",
+          "url": siteConfig.site_domain,
           "logo": siteConfig.brand.logoUrl,
           "description": "SF6 Gas Solution - Full Lifecycle of SF6 Gas Solution",
           "address": {

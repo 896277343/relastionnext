@@ -11,7 +11,7 @@ import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbP
 import { siteConfig } from "@/site.config";
 
 export const metadata: Metadata = {
-  title: "SF6 Gas Equipment Products | SF6 Relations",
+  title: `SF6 Gas Equipment Products | ${siteConfig.site_name}`,
   description: "High-quality SF6 gas equipment including leak detectors, room monitors, analyzers, filling carts, handling systems, and regeneration systems for various industrial applications.",
   keywords: ["SF6 gas equipment", "SF6 leak detector", "SF6 room monitor", "SF6 analyzer", "SF6 filling cart", "SF6 handling", "SF6 regeneration", "SF6 gas solutions"],
   alternates: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "SF6 Gas Equipment Products | SF6 Relations",
+    title: `SF6 Gas Equipment Products | ${siteConfig.site_name}`,
     description: "High-quality SF6 gas equipment including leak detectors, room monitors, analyzers, filling carts, handling systems, and regeneration systems for various industrial applications.",
     images: [{
       url: "/opengraph-image.jpeg",
@@ -30,13 +30,67 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SF6 Gas Equipment Products | SF6 Relations",
+    title: `SF6 Gas Equipment Products | ${siteConfig.site_name}`,
     description: "High-quality SF6 gas equipment including leak detectors, room monitors, analyzers, filling carts, handling systems, and regeneration systems for various industrial applications.",
     images: ["/twitter-image.jpeg"],
   },
 };
 
 export default function ProductsPage() {
+  const structuredProducts = [
+    {
+      name: "SF6 Leak Detector",
+      description:
+        "Infrared Principle Portable SF6 Leakage Detection, Built-in Air Pump, ppm Precision, Stability and Durability, 10 Years of Sensor Life",
+      url: `${siteConfig.site_domain}/products/sf6-leak-detector`,
+      productID: "SF6-LEAK-001",
+      category: "SF6 Gas Detection Equipment",
+      image: "/pics/products/sf6-leak-detector-p.jpg",
+    },
+    {
+      name: "SF6 Room Monitor",
+      description:
+        "7 * 24-hour full-day detection of SF6 gas leakage and detection of oxygen concentration and environmental temperature and humidity.",
+      url: `${siteConfig.site_domain}/products/sf6-room-monitor`,
+      productID: "SF6-MONITOR-001",
+      category: "SF6 Gas Monitoring Equipment",
+      image: "/pics/products/sf6-room-monitor-p.jpg",
+    },
+    {
+      name: "SF6 Gas Analyzer",
+      description:
+        "Portable SF6 gas quality comprehensive analysis to detect sulfur hexafluoride purity, humidity and decomposition products SO2 CO H2S",
+      url: `${siteConfig.site_domain}/products/sf6-gas-analyzer`,
+      productID: "SF6-ANALYSIS-001",
+      category: "SF6 Gas Analysis Equipment",
+      image: "/pics/products/sf6-analysis-p.jpg",
+    },
+    {
+      name: "SF6 Gas Filling Cart",
+      description: "For evacuation of air and refilling of gas compartments from SF6 gas bottles",
+      url: `${siteConfig.site_domain}/products/sf6-gas-filling-cart`,
+      productID: "SF6-FILL-001",
+      category: "SF6 Gas Handling Equipment",
+      image: "/pics/products/sf6-gas-filling-cart-p.jpg",
+    },
+    {
+      name: "SF6 Service Carts",
+      description: "For recovery and filter SF6 gas from gas compartment",
+      url: `${siteConfig.site_domain}/products/sf6-service-carts`,
+      productID: "SF6-HANDLING-001",
+      category: "SF6 Gas Handling Equipment",
+      image: "/pics/products/sf6-service-carts-p.jpg",
+    },
+    {
+      name: "SF6 Regeneration System",
+      description: "SF6 regeneration system, after regeneration treatment meeting IEC60480 specification.",
+      url: `${siteConfig.site_domain}/products/sf6-regeneration-system`,
+      productID: "SF6-REGEN-001",
+      category: "SF6 Gas Regeneration Equipment",
+      image: "/pics/products/sf6-regeneration-system-p.jpg",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Structured Data */}
@@ -46,7 +100,7 @@ export default function ProductsPage() {
           "@type": "CollectionPage",
           "name": "SF6 Gas Equipment Products",
           "description": "High-quality SF6 gas equipment including leak detectors, room monitors, analyzers, filling carts, handling systems, and regeneration systems for various industrial applications.",
-          "url": "https://www.sf6relations.com/products",
+          "url": `${siteConfig.site_domain}/products`,
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
@@ -54,152 +108,40 @@ export default function ProductsPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://www.sf6relations.com"
+                "item": siteConfig.site_domain
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Products",
-                "item": "https://www.sf6relations.com/products"
+                "item": `${siteConfig.site_domain}/products`
               }
             ]
           },
           "mainEntity": {
             "@type": "ItemList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "item": {
-                  "@type": "Product",
-                  "name": "SF6 Leak Detector",
-                  "description": "Infrared Principle Portable SF6 Leakage Detection, Built-in Air Pump, ppm Precision, Stability and Durability, 10 Years of Sensor Life",
-                  "url": "https://www.sf6relations.com/products#sf6-leak-detector",
-                  "brand": {
-                    "@type": "Organization",
-                    "name": siteConfig.brand.legalName
-                  },
-                  "offers": {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "priceCurrency": "USD"
-                  },
-                  "productID": "SF6-LEAK-001",
-                  "category": "SF6 Gas Detection Equipment",
-                  "image": "/pics/products/sf6-leak-detector-p.jpg"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "item": {
-                  "@type": "Product",
-                  "name": "SF6 Room Monitor",
-                  "description": "7 * 24-hour full-day detection of SF6 gas leakage and detection of oxygen concentration and environmental temperature and humidity.",
-                  "url": "https://www.sf6relations.com/products#sf6-room-monitor",
-                  "brand": {
-                    "@type": "Organization",
-                    "name": siteConfig.brand.legalName
-                  },
-                  "offers": {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "priceCurrency": "USD"
-                  },
-                  "productID": "SF6-MONITOR-001",
-                  "category": "SF6 Gas Monitoring Equipment",
-                  "image": "/pics/products/sf6-room-monitor-p.jpg"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "item": {
-                  "@type": "Product",
-                  "name": "SF6 Analysis",
-                  "description": "Portable SF6 gas quality comprehensive analysis to detect sulfur hexafluoride purity, humidity and decomposition products SO2 CO H2S",
-                  "url": "https://www.sf6relations.com/products#sf6-analysis",
-                  "brand": {
-                    "@type": "Organization",
-                    "name": siteConfig.brand.legalName
-                  },
-                  "offers": {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "priceCurrency": "USD"
-                  },
-                  "productID": "SF6-ANALYSIS-001",
-                  "category": "SF6 Gas Analysis Equipment",
-                  "image": "/pics/products/sf6-analysis-p.jpg"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 4,
-                "item": {
-                  "@type": "Product",
-                  "name": "SF6 Filling Cart",
-                  "description": "For evacuation of air and refilling of gas compartments from SF6 gas bottles",
-                  "url": "https://www.sf6relations.com/products#sf6-filling-cart",
-                  "brand": {
-                    "@type": "Organization",
-                    "name": siteConfig.brand.legalName
-                  },
-                  "offers": {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "priceCurrency": "USD"
-                  },
-                  "productID": "SF6-FILL-001",
-                  "category": "SF6 Gas Handling Equipment",
-                  "image": "/pics/products/sf6-gas-filling-cart-p.jpg"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 5,
-                "item": {
-                  "@type": "Product",
-                  "name": "SF6 Handling",
-                  "description": "For recovery and filter SF6 gas from gas compartment",
-                  "url": "https://www.sf6relations.com/products#sf6-handling",
-                  "brand": {
-                    "@type": "Organization",
-                    "name": siteConfig.brand.legalName
-                  },
-                  "offers": {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "priceCurrency": "USD"
-                  },
-                  "productID": "SF6-HANDLING-001",
-                  "category": "SF6 Gas Handling Equipment",
-                  "image": "/pics/products/sf6-service-carts-p.jpg"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 6,
-                "item": {
-                  "@type": "Product",
-                  "name": "SF6 Regeneration",
-                  "description": "SF6 regeneration system, after regeneration treatment meeting IEC60480 specification.",
-                  "url": "https://www.sf6relations.com/products#sf6-regeneration",
-                  "brand": {
-                    "@type": "Organization",
-                    "name": siteConfig.brand.legalName
-                  },
-                  "offers": {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "priceCurrency": "USD"
-                  },
-                  "productID": "SF6-REGEN-001",
-                  "category": "SF6 Gas Regeneration Equipment",
-                  "image": "/pics/products/sf6-regeneration-system-p.jpg"
-                }
+            "itemListElement": structuredProducts.map((product, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Product",
+                "name": product.name,
+                "description": product.description,
+                "url": product.url,
+                "brand": {
+                  "@type": "Organization",
+                  "name": siteConfig.brand.legalName
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "availability": "https://schema.org/InStock",
+                  "priceCurrency": "USD"
+                },
+                "productID": product.productID,
+                "category": product.category,
+                "image": product.image
               }
-            ]
+            }))
           }
         })}
       </Script>

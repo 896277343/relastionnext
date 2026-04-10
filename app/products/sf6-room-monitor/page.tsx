@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "environmental monitoring",
     "24/7 gas detection",
     product.model,
-    "SF6 Relations"
+    siteConfig.brand.legalName
   ],
   alternates: {
     canonical: `${siteConfig.site_domain}/products/sf6-room-monitor`,

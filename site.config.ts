@@ -23,28 +23,24 @@ type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  site_name: "SF6 Relations",
+  site_name: "SF6 in Switchgear",
   site_description: "SF6 Gas Solution - Full Lifecycle of SF6 Gas Solution",
-  site_domain: "https://www.sf6relations.com",
+  site_domain: "https://www.sf6inswitchgear.com",
   brand: {
-    legalName: "SF6 Relations",
+    legalName: "SF6 in Switchgear",
     logoPath: "/logo.svg",
-    logoUrl: "https://www.sf6relations.com/logo.svg",
-    socialLinks: [
-      "https://www.linkedin.com/company/sf6relations",
-      "https://twitter.com/sf6relations",
-      "https://facebook.com/sf6relations",
-    ],
+    logoUrl: "https://www.sf6inswitchgear.com/logo.svg",
+    socialLinks: [],
   },
   contact: {
     phone: "+86 371 68988008",
-    email: "sales@sf6relations.com",
+    email: "sales@sf6inswitchgear.com",
     address: "300000+ square meters industrial park",
     hoursLong: "Monday - Friday: 9:00 AM - 6:00 PM",
     hoursShort: "Mon-Fri: 9:00-18:00",
   },
   footer: {
-    copyrightName: "SF6 Relations",
+    copyrightName: "SF6 in Switchgear",
     copyrightYears: "2025-present",
     summary:
       "We are a professional R&D and manufacturing factory focusing on SF6 gas full lifecycle management, supplying high-quality products including SF6 gas leakage detection sensors, real-time monitoring systems, SF6 recovery & purification equipment, and gas refilling devices, while delivering one-stop eco-friendly SF6 recycling and smart substation safety solutions for the global power energy industry.",

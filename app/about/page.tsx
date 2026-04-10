@@ -10,26 +10,26 @@ import { ChevronRight, CheckCircle, MapPin, Phone, Mail, Clock } from "lucide-re
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "About SF6 Relations | SF6 Gas Equipment Manufacturer",
+  title: `About ${siteConfig.brand.legalName} | SF6 Gas Equipment Manufacturer`,
   description: "With 25 years of experience in SF6 gas equipment manufacturing, we are experts in sulfur hexafluoride gas solutions. Learn more about our company, mission, and values.",
-  keywords: ["about SF6 Relations", "SF6 gas manufacturer", "SF6 gas experts", "company mission", "company values", "SF6 gas solutions"],
+  keywords: [`about ${siteConfig.brand.legalName}`, "SF6 gas manufacturer", "SF6 gas experts", "company mission", "company values", "SF6 gas solutions"],
   alternates: {
     canonical: `${siteConfig.site_domain}/about`,
   },
   openGraph: {
     type: "website",
-    title: "About SF6 Relations | SF6 Gas Equipment Manufacturer",
+    title: `About ${siteConfig.brand.legalName} | SF6 Gas Equipment Manufacturer`,
     description: "With 25 years of experience in SF6 gas equipment manufacturing, we are experts in sulfur hexafluoride gas solutions. Learn more about our company, mission, and values.",
     images: [{
       url: "/opengraph-image.jpeg",
       width: 1200,
       height: 630,
-      alt: "About SF6 Relations",
+      alt: `About ${siteConfig.brand.legalName}`,
     }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About SF6 Relations | SF6 Gas Equipment Manufacturer",
+    title: `About ${siteConfig.brand.legalName} | SF6 Gas Equipment Manufacturer`,
     description: "With 25 years of experience in SF6 gas equipment manufacturing, we are experts in sulfur hexafluoride gas solutions. Learn more about our company, mission, and values.",
     images: ["/twitter-image.jpeg"],
   },
@@ -43,9 +43,9 @@ export default function AboutPage() {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          "name": "About SF6 Relations",
+          "name": `About ${siteConfig.brand.legalName}`,
           "description": "With 25 years of experience in SF6 gas equipment manufacturing, we are experts in sulfur hexafluoride gas solutions.",
-          "url": "https://www.sf6relations.com/about",
+          "url": `${siteConfig.site_domain}/about`,
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
@@ -53,20 +53,20 @@ export default function AboutPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://www.sf6relations.com"
+                "item": siteConfig.site_domain
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "About Us",
-                "item": "https://www.sf6relations.com/about"
+                "item": `${siteConfig.site_domain}/about`
               }
             ]
           },
           "mainEntity": {
             "@type": "Organization",
             "name": siteConfig.brand.legalName,
-            "url": "https://www.sf6relations.com",
+            "url": siteConfig.site_domain,
             "logo": siteConfig.brand.logoUrl,
             "description": "SF6 Gas Solution - Full Lifecycle of SF6 Gas Solution",
             "address": {
@@ -131,7 +131,7 @@ export default function AboutPage() {
           </Breadcrumb>
           
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6">About SF6 Relations</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-6">About {siteConfig.brand.legalName}</h1>
             <p className="text-xl mb-8 opacity-90">
               With 25 years of experience in SF6 gas equipment manufacturing, we are experts in sulfur hexafluoride gas solutions
             </p>

@@ -11,7 +11,7 @@ import { ChevronRight, CheckCircle } from "lucide-react";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "SF6 Gas Projects | SF6 Relations",
+  title: `SF6 Gas Projects | ${siteConfig.site_name}`,
   description: "Successful SF6 gas solutions for various industries and applications, including underground substations, gas insulated switchgear manufacturers, and ultra-high voltage projects.",
   keywords: ["SF6 gas projects", "SF6 gas solutions", "underground substation", "gas insulated switchgear", "ultra-high voltage", "SF6 gas handling"],
   alternates: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "SF6 Gas Projects | SF6 Relations",
+    title: `SF6 Gas Projects | ${siteConfig.site_name}`,
     description: "Successful SF6 gas solutions for various industries and applications, including underground substations, gas insulated switchgear manufacturers, and ultra-high voltage projects.",
     images: [{
       url: "/opengraph-image.jpeg",
@@ -30,37 +30,28 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SF6 Gas Projects | SF6 Relations",
+    title: `SF6 Gas Projects | ${siteConfig.site_name}`,
     description: "Successful SF6 gas solutions for various industries and applications, including underground substations, gas insulated switchgear manufacturers, and ultra-high voltage projects.",
     images: ["/twitter-image.jpeg"],
   },
 };
 
-const featuredProductPool = [
+const featuredProducts = [
   { name: "SF6 Leak Detector", slug: "sf6-leak-detector", image: "/pics/products/sf6-leak-detector.jpg" },
   { name: "SF6 Room Monitor", slug: "sf6-room-monitor", image: "/pics/products/sf6-room-monitor.jpg" },
   { name: "SF6 Gas Analyzer", slug: "sf6-gas-analyzer", image: "/pics/products/sf6-analyzer.jpg" },
   { name: "SF6 Gas Filling Cart", slug: "sf6-gas-filling-cart", image: "/pics/products/sf6-gas-filling-cart.jpg" },
-  { name: "SF6 Gas Filling Kit", slug: "sf6-gas-filling-kit", image: "/pics/products/sf6-gas-filling-kit.jpg" },
-  { name: "SF6 Gas Fittings", slug: "sf6-gas-fittings", image: "/pics/products/sf6-gas-fittings.jpg" },
-  { name: "SF6 Regeneration System", slug: "sf6-regeneration-system", image: "/pics/products/sf6-regeneration-system.jpg" },
-  { name: "SF6 Service Carts", slug: "sf6-service-carts", image: "/pics/products/sf6-service-carts.jpg" },
-  { name: "Mobile SF6 Vacuum Pump Unit", slug: "mobile-sf6-vacuum-pump-unit", image: "/pics/products/mobile-sf6-vacuum-pump-unit.jpg" },
 ];
 
-function getRandomProducts(count: number) {
-  const items = [...featuredProductPool];
-
-  for (let i = items.length - 1; i > 0; i -= 1) {
-    const randomIndex = Math.floor(Math.random() * (i + 1));
-    [items[i], items[randomIndex]] = [items[randomIndex], items[i]];
-  }
-
-  return items.slice(0, count);
-}
-
 export default function ProjectsPage() {
-  const randomProducts = getRandomProducts(4);
+  const structuredProjects = [
+    {
+      name: "SF6 Gas handling for Underground Substation",
+      description:
+        "SF6 gas is increasingly used in confined Spaces. Underground substations use a lot of high-voltage equipment. SF6 Gas safety solutions.",
+      url: `${siteConfig.site_domain}/projects/sf6-gas-handling-for-underground-substation`,
+    },
+  ];
 
   return (
     <div className="min-h-screen">
@@ -71,7 +62,7 @@ export default function ProjectsPage() {
           "@type": "CollectionPage",
           "name": "SF6 Gas Projects",
           "description": "Successful SF6 gas solutions for various industries and applications",
-          "url": "https://www.sf6relations.com/projects",
+          "url": `${siteConfig.site_domain}/projects`,
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
@@ -79,60 +70,28 @@ export default function ProjectsPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://www.sf6relations.com"
+                "item": siteConfig.site_domain
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Projects",
-                "item": "https://www.sf6relations.com/projects"
+                "item": `${siteConfig.site_domain}/projects`
               }
             ]
           },
           "mainEntity": {
             "@type": "ItemList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "item": {
-                  "@type": "Project",
-                  "name": "SF6 Gas handling for Underground Substation",
-                  "description": "SF6 gas is increasingly used in confined Spaces. Underground substations use a lot of high-voltage equipment. SF6 Gas safety solutions.",
-                  "url": "https://www.sf6relations.com/projects/sf6-gas-handling-for-underground-substation"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "item": {
-                  "@type": "Project",
-                  "name": "SF6 use for Gas Insulated Switchgear Manufacturers",
-                  "description": "A large amount of SF6 gas is needed to test the equipment during the R&D and manufacturing process. We provide solutions for reusing SF6 gas for experiments.",
-                  "url": "https://www.sf6relations.com/projects#gis-manufacturers"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "item": {
-                  "@type": "Project",
-                  "name": "Ultra-high voltage SF6 Handling equipment",
-                  "description": "We have rich experience in field service 750KV and 1000KV substation working experience, including Gas Insulated Lines.",
-                  "url": "https://www.sf6relations.com/projects#ultra-high-voltage"
-                }
-              },
-              {
-                "@type": "ListItem",
-                "position": 4,
-                "item": {
-                  "@type": "Project",
-                  "name": "SF6 Gas Handling and Regeneration base",
-                  "description": "SF6 handling base has a large recycling & regeneration & vacuum equipment. Efficient regeneration of SF6 and Achieving whole-life system management of SF6 gas.",
-                  "url": "https://www.sf6relations.com/projects#regeneration-base"
-                }
+            "itemListElement": structuredProjects.map((project, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Project",
+                "name": project.name,
+                "description": project.description,
+                "url": project.url
               }
-            ]
+            }))
           }
         })}
       </Script>
@@ -222,7 +181,7 @@ export default function ProjectsPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-            {randomProducts.map((product) => (
+            {featuredProducts.map((product) => (
               <div
                 key={product.slug}
                 className="group cursor-pointer rounded-lg border bg-white hover:shadow-lg transition-shadow"

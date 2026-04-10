@@ -10,26 +10,26 @@ import { MapPin, Phone, Mail, Clock, CheckCircle } from "lucide-react";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Contact SF6 Relations | SF6 Gas Equipment Manufacturer",
+  title: `Contact ${siteConfig.brand.legalName} | SF6 Gas Equipment Manufacturer`,
   description: "Contact us for all your SF6 gas solution needs. Our experts are ready to help you find the right equipment and services for your specific requirements.",
-  keywords: ["contact SF6 Relations", "SF6 gas equipment", "SF6 gas solutions", "contact form", "customer service", "SF6 gas experts"],
+  keywords: [`contact ${siteConfig.brand.legalName}`, "SF6 gas equipment", "SF6 gas solutions", "contact form", "customer service", "SF6 gas experts"],
   alternates: {
     canonical: `${siteConfig.site_domain}/contact`,
   },
   openGraph: {
     type: "website",
-    title: "Contact SF6 Relations | SF6 Gas Equipment Manufacturer",
+    title: `Contact ${siteConfig.brand.legalName} | SF6 Gas Equipment Manufacturer`,
     description: "Contact us for all your SF6 gas solution needs. Our experts are ready to help you find the right equipment and services for your specific requirements.",
     images: [{
       url: "/opengraph-image.jpeg",
       width: 1200,
       height: 630,
-      alt: "Contact SF6 Relations",
+      alt: `Contact ${siteConfig.brand.legalName}`,
     }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact SF6 Relations | SF6 Gas Equipment Manufacturer",
+    title: `Contact ${siteConfig.brand.legalName} | SF6 Gas Equipment Manufacturer`,
     description: "Contact us for all your SF6 gas solution needs. Our experts are ready to help you find the right equipment and services for your specific requirements.",
     images: ["/twitter-image.jpeg"],
   },
@@ -43,9 +43,9 @@ export default function ContactPage() {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          "name": "Contact SF6 Relations",
+          "name": `Contact ${siteConfig.brand.legalName}`,
           "description": "Contact us for all your SF6 gas solution needs. Our experts are ready to help you find the right equipment and services for your specific requirements.",
-          "url": "https://www.sf6relations.com/contact",
+          "url": `${siteConfig.site_domain}/contact`,
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
@@ -53,20 +53,20 @@ export default function ContactPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://www.sf6relations.com"
+                "item": siteConfig.site_domain
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Contact Us",
-                "item": "https://www.sf6relations.com/contact"
+                "item": `${siteConfig.site_domain}/contact`
               }
             ]
           },
           "mainEntity": {
             "@type": "Organization",
             "name": siteConfig.brand.legalName,
-            "url": "https://www.sf6relations.com",
+            "url": siteConfig.site_domain,
             "logo": siteConfig.brand.logoUrl,
             "contactPoint": [
               {
@@ -151,7 +151,7 @@ export default function ContactPage() {
               </div>
               
               <div className="mt-12">
-                <h3 className="text-2xl font-semibold mb-4">Why Choose SF6 Relations</h3>
+                <h3 className="text-2xl font-semibold mb-4">Why Choose {siteConfig.brand.legalName}</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle size={20} className="text-green-600 mt-1 flex-shrink-0" />
@@ -180,8 +180,8 @@ export default function ContactPage() {
               <div className="bg-white p-8 rounded-lg shadow-sm">
                 <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
                 <form method="POST" action="//inquiry.sf6sf6.com/updata_ppc.php" className="space-y-4">
-                  <input type="hidden" name="from_company" value="SF6 Relations" />
-                  <input type="hidden" name="referer" value="https://www.sf6relations.com/contact" />
+                  <input type="hidden" name="from_company" value={siteConfig.brand.legalName} />
+                  <input type="hidden" name="referer" value={`${siteConfig.site_domain}/contact`} />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block mb-2 font-medium">Name</label>

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "gas monitoring",
     "leakage detection",
     "substation safety",
-    "SF6 Relations"
+    siteConfig.brand.legalName
   ],
   alternates: {
     canonical: `${siteConfig.site_domain}/projects/sf6-gas-handling-for-underground-substation`,

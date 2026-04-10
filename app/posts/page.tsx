@@ -159,7 +159,7 @@ export default async function Page({
             </BreadcrumbList>
           </Breadcrumb>
           <Prose>
-            <h1>All Posts</h1>
+            <h1>{postsTitle}</h1>
             <p className="text-muted-foreground">
               {total} {total === 1 ? "post" : "posts"} found
               {search && " matching your search"}

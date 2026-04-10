@@ -25,20 +25,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/projects",
     "/projects/sf6-gas-handling-for-underground-substation",
     "/posts",
-    "/pages",
-    "/posts/authors",
-    "/posts/categories",
-    "/posts/tags",
   ] as const;
 
-  const now = new Date();
+  const staticLastModifiedMap: Partial<Record<(typeof staticPaths)[number], string>> = {
+    "/": "2026-04-10",
+    "/about": "2026-04-10",
+    "/contact": "2026-04-10",
+    "/products": "2026-04-10",
+    "/projects": "2026-04-10",
+    "/posts": "2026-04-10",
+  };
 
   const staticUrls: MetadataRoute.Sitemap = staticPaths.map((path) => ({
     url: `${siteConfig.site_domain}${path === "/" ? "" : path}`,
-    lastModified: now,
+    lastModified: new Date(staticLastModifiedMap[path] ?? "2026-04-10"),
     changeFrequency:
       path === "/"
-        ? "yearly"
+        ? "monthly"
         : path.startsWith("/posts")
           ? "weekly"
           : "monthly",
